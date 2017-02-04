@@ -4,23 +4,18 @@ import hashlib
 import time
 
 url = 'https://vip.bitcoin.co.id/tapi/'
-key = 'my-api-key'
-secret = 'my-token-key'
+key = 'my_api_key'
+secret = 'my_token_secret'
 method = 'getInfo'
 
-parameter = {
-'method' : method
-'nonce' : str(int(time.time())
-}
+post_data = '&method=' + method + '&nonce=' + str(int(time.time()))
 
-req = '&method=' + method + '&nonce=' + str(int(time.time()))
-
-sign = hmac.new(secret, req, hashlib.sha512).hexdigest()
+sign = hmac.new(secret, post_data, hashlib.sha512).hexdigest()
 headers = {
 'Sign' : sign
 'Key' : key
 }
 
-response = requests.post(url, params=parameter, headers=headers)
+response = requests.post(url, headers=headers)
 
 print response.content
