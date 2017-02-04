@@ -4,8 +4,8 @@ import hashlib
 import time
 
 url = 'https://vip.bitcoin.co.id/tapi/'
-key = 'MYLKGOG6-34NVQVPW-KH11EJBY-JXX0KMLV-BEMBVZ2V'
-secret = 'a4d1668f6cc9f5ee9b7256d2072b7bbba87bcf93d55db881a1ddcefbcd76832c396ce78360e13260'
+key = 'my-api-key'
+secret = 'my-token-key'
 method = 'getInfo'
 
 parameter = {
